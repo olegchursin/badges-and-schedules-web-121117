@@ -41,7 +41,12 @@ end
 #4
 #Create a method called printer that will output first the results of the batch_badge_creator
 #method and then of the assign_rooms method to the screen.
-def printer
-  p batch_badge_creator
-  p assign_rooms
+def printer(attendees)
+  batch_badge_creator(attendees).each do |badge|
+    puts badge
+  end
+
+  assign_rooms(attendees).each do |assignment|
+    puts assignment
+  end
 end
